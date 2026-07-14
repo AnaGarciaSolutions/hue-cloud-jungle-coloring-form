@@ -214,7 +214,6 @@
 
 <div class="container">
   <div class="banner">
-    <!-- ✅ GITHUB-RECOMMENDED: Upload your logo as `logo.png` to your repo root -->
     <img src="logo.png" alt="Hue Cloud Petal Pages Logo" class="brand-logo" onerror="this.alt='Hue Cloud Petal Pages'">
     <h1>🌿 Jungle & Baby Jungle Coloring Pack</h1>
     <p>Printable PDF • Sent directly to your email • Ages 3–15</p>
@@ -292,13 +291,13 @@
 </div>
 
 <script>
-// ✅ AUTO GENERATE REFERENCE NUMBER ON PAGE LOAD
+// Auto generate reference number
 const today = new Date();
 const dateStr = today.toISOString().slice(0,10).replace(/-/g,'');
 const refNo = `HC-${dateStr}-${Math.floor(Math.random()*99999).toString().padStart(5,'0')}`;
 document.getElementById('refNo').textContent = refNo;
 
-// ✅ WORKING PACK SELECTION
+// Pack selection works
 document.getElementById('single').addEventListener('change', function() {
   document.querySelectorAll('.option').forEach(opt => opt.classList.remove('active'));
   this.closest('.option').classList.add('active');
@@ -311,7 +310,7 @@ document.getElementById('bundle').addEventListener('change', function() {
   document.getElementById('totalPrice').textContent = '₱129';
 });
 
-// ✅ WORKING SUBMIT BUTTON
+// Submit button works
 document.getElementById('submitBtn').addEventListener('click', function() {
   const name = document.getElementById('fullname').value.trim();
   const email = document.getElementById('email').value.trim();
