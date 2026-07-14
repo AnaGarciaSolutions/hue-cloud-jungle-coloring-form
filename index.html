@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hue Cloud Petal Pages | Jungle Coloring Pack Order Form</title>
+<style>
+  :root {
+    --teal: #2DD4BF;
+    --teal-dark: #0D9488;
+    --coral: #F87171;
+    --coral-dark: #EF4444;
+    --gold: #FBBF24;
+    --gold-dark: #D97706;
+    --light: #F8FAFC;
+    --dark: #334155;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+  }
+  body {
+    background: linear-gradient(135deg, #ECFEF9 0%, #FFF1F2 100%);
+    min-height: 100vh;
+    padding: 2rem 1rem;
+  }
+  .container {
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  .banner {
+    background: linear-gradient(135deg, var(--teal) 0%, var(--coral) 100%);
+    border-radius: 20px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 32px rgba(45, 212, 191, 0.25);
+  }
+  .brand-logo {
+    max-width: 210px;
+    margin: 0 auto 1rem;
+    display: block;
+    border-radius: 12px;
+    background: white;
+    padding: 0.5rem;
+  }
+  .banner h1 {
+    color: white;
+    font-size: 1.75rem;
+    margin-bottom: 0.4rem;
+  }
+  .banner p {
+    color: rgba(255,255,255,0.95);
+    font-size: 1rem;
+  }
+
+  .card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.8rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--gold);
+  }
+  .card h2 {
+    color: var(--teal-dark);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.2rem;
+  }
+  .form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--dark);
+    font-size: 0.95rem;
+  }
+  .form-group input {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 2px solid #E2E8F0;
+    border-radius: 10px;
+    font-size: 1rem;
+  }
+  .form-group input:focus {
+    outline: none;
+    border-color: var(--coral);
+  }
+
+  .option {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.1rem;
+    margin: 0.8rem 0;
+    border: 2px solid #E2E8F0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .option.active {
+    border-color: var(--coral);
+    background: #FFF5F5;
+  }
+  .option input {
+    margin-top: 0.3rem;
+    accent-color: var(--coral);
+    width: 1.2rem;
+    height: 1.2rem;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .option-text {
+    flex: 1;
+  }
+  .option-text strong {
+    font-size: 1.05rem;
+    color: var(--dark);
+  }
+  .option-text p {
+    font-size: 0.85rem;
+    color: #64748B;
+    margin-top: 0.3rem;
+    line-height: 1.5;
+  }
+  .price-tag {
+    font-weight: 700;
+    color: var(--coral-dark);
+    font-size: 1.1rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .price-tag strike {
+    font-size: 0.85rem;
+    color: #94A3B8;
+    margin-right: 0.4rem;
+  }
+
+  .summary {
+    background: linear-gradient(135deg, #F0FDFA 0%, #FFFBEB 100%);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    margin: 1.5rem 0;
+  }
+  .summary .total {
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: var(--teal-dark);
+    margin: 0.5rem 0;
+  }
+  .ref {
+    font-size: 0.95rem;
+    color: var(--gold-dark);
+    font-weight: 600;
+    margin-top: 0.5rem;
+  }
+
+  .payment-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.85rem 1rem;
+    background: #F8FAFC;
+    border-radius: 8px;
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+  }
+  .instructions {
+    background: #FFFBEB;
+    border-left: 4px solid var(--gold);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1.2rem 0 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--coral);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  .btn:hover {
+    background: var(--coral-dark);
+  }
+  .btn:active {
+    transform: scale(0.98);
+  }
+
+  .footer-note {
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    color: #64748B;
+    text-align: center;
+    line-height: 1.5;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="banner">
+    <!-- ✅ GITHUB-RECOMMENDED: Upload your logo as `logo.png` to your repo root -->
+    <img src="logo.png" alt="Hue Cloud Petal Pages Logo" class="brand-logo" onerror="this.alt='Hue Cloud Petal Pages'">
+    <h1>🌿 Jungle & Baby Jungle Coloring Pack</h1>
+    <p>Printable PDF • Sent directly to your email • Ages 3–15</p>
+  </div>
+
+  <div class="card">
+    <h2>👤 Your Details</h2>
+    <div class="form-group">
+      <label for="fullname">Full Name *</label>
+      <input type="text" id="fullname" placeholder="Enter your full name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email Address (We send your PDF here) *</label>
+      <input type="email" id="email" placeholder="your@email.com" required>
+    </div>
+    <div class="form-group">
+      <label for="contact">Contact Number *</label>
+      <input type="tel" id="contact" placeholder="09XX XXX XXXX" required>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📘 Choose Your Pack</h2>
+    <label class="option" for="single">
+      <input type="radio" name="pack" id="single" value="single">
+      <div class="option-text">
+        <strong>Single Series</strong>
+        <p>Jungle Animals OR Jungle Babies (13 pages)<br>
+        • Lion: Roar heard from 5 miles away<br>
+        • Elephant: Only animal that can't jump<br>
+        • Monkey: Uses tail like an extra hand<br>
+        • Zebra: Unique stripes like fingerprints<br>
+        • Rabbit: Ears turn 180 degrees<br>
+        • Giraffe: Tongue up to 20 inches long<br>
+        • Deer: Fawn spots look like sunlight<br>
+        • Panda: Babies born pink, size of butter<br>
+        • Fox: Babies called kits, love to play</p>
+      </div>
+      <div class="price-tag">₱79</div>
+    </label>
+    <label class="option active" for="bundle">
+      <input type="radio" name="pack" id="bundle" value="bundle" checked>
+      <div class="option-text">
+        <strong>🔥 Double Pack (Best Value)</strong>
+        <p>BOTH Series • 26 full pages + 2 Certificates + Bonus Activities<br>
+        Includes ALL fun facts exactly as your Jungle & Baby Jungle book</p>
+      </div>
+      <div class="price-tag"><strike>₱198</strike> ₱129</div>
+    </label>
+  </div>
+
+  <div class="summary">
+    <p>Your Total:</p>
+    <div class="total" id="totalPrice">₱129</div>
+    <div class="ref">Order Reference: <span id="refNo">Loading...</span></div>
+    <p style="font-size:0.9rem; margin-top:0.5rem;">No shipping fee • PDF sent within 1 hour after payment confirmation</p>
+  </div>
+
+  <div class="card">
+    <h3>💳 Accepted Payment Methods</h3>
+    <div class="payment-row"><span>Maya</span><span>Fastest Confirmation</span></div>
+    <div class="payment-row"><span>Maribank</span><span>Direct Bank Transfer</span></div>
+    <div class="instructions">
+      📩 <strong>How to Order:</strong><br>
+      1. Fill in all details above<br>
+      2. Message us to request payment QR code or bank details<br>
+      3. Send payment screenshot + your reference number<br>
+      4. We send your PDF to your email immediately
+    </div>
+  </div>
+
+  <button class="btn" id="submitBtn">Submit & Get Reference Number</button>
+
+  <p class="footer-note">© 2026 Hue Cloud Petal Pages • For personal family use only</p>
+</div>
+
+<script>
+// ✅ AUTO GENERATE REFERENCE NUMBER ON PAGE LOAD
+const today = new Date();
+const dateStr = today.toISOString().slice(0,10).replace(/-/g,'');
+const refNo = `HC-${dateStr}-${Math.floor(Math.random()*99999).toString().padStart(5,'0')}`;
+document.getElementById('refNo').textContent = refNo;
+
+// ✅ WORKING PACK SELECTION
+document.getElementById('single').addEventListener('change', function() {
+  document.querySelectorAll('.option').forEach(opt => opt.classList.remove('active'));
+  this.closest('.option').classList.add('active');
+  document.getElementById('totalPrice').textContent = '₱79';
+});
+
+document.getElementById('bundle').addEventListener('change', function() {
+  document.querySelectorAll('.option').forEach(opt => opt.classList.remove('active'));
+  this.closest('.option').classList.add('active');
+  document.getElementById('totalPrice').textContent = '₱129';
+});
+
+// ✅ WORKING SUBMIT BUTTON
+document.getElementById('submitBtn').addEventListener('click', function() {
+  const name = document.getElementById('fullname').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const contact = document.getElementById('contact').value.trim();
+  
+  if (!name || !email || !contact) {
+    alert('⚠️ Please fill in all required fields first!');
+    return;
+  }
+
+  alert(`✅ Order Recorded Successfully!\n\n📌 Reference Number: ${refNo}\n👤 Name: ${name}\n📧 Email: ${email}\n📞 Contact: ${contact}\n\nMessage us now with this reference to get your payment details.`);
+});
+</script>
+</body>
+</html>
