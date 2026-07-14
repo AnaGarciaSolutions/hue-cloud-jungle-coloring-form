@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hue Cloud Petal Pages | Jungle Coloring Pack Order Form</title>
+<title>Hue Cloud Petal Pages | Jungle & Baby Jungle Coloring Pack Order Form</title>
 <style>
   :root {
     --teal: #2DD4BF;
@@ -242,15 +242,15 @@
       <div class="option-text">
         <strong>Single Series</strong>
         <p>Jungle Animals OR Jungle Babies (13 pages)<br>
-        • Lion: Roar heard from 5 miles away<br>
-        • Elephant: Only animal that can't jump<br>
-        • Monkey: Uses tail like an extra hand<br>
-        • Zebra: Unique stripes like fingerprints<br>
-        • Rabbit: Ears turn 180 degrees<br>
-        • Giraffe: Tongue up to 20 inches long<br>
-        • Deer: Fawn spots look like sunlight<br>
-        • Panda: Babies born pink, size of butter<br>
-        • Fox: Babies called kits, love to play</p>
+        • Lion: A lion's roar can be heard from 5 miles away!<br>
+        • Elephant: Elephants are the only animals that can't jump!<br>
+        • Monkey: Monkeys use their tails like an extra hand to swing and grab things!<br>
+        • Zebra: Every zebra has a unique pattern of stripes, just like your fingerprints!<br>
+        • Rabbit: Rabbits can turn their ears 180 degrees to listen in any direction!<br>
+        • Giraffe: Giraffes are the tallest animals on Earth and their tongues can be up to 20 inches long!<br>
+        • Deer: Baby deer are called fawns, and their white spots help them hide in the forest by looking like sunlight on leaves!<br>
+        • Panda: A baby panda is born pink and tiny, about the size of a stick of butter!<br>
+        • Fox: A baby fox is called a kit, and it loves to play and pounce just like a puppy!</p>
       </div>
       <div class="price-tag">₱79</div>
     </label>
@@ -258,7 +258,7 @@
       <input type="radio" name="pack" id="bundle" value="bundle" checked>
       <div class="option-text">
         <strong>🔥 Double Pack (Best Value)</strong>
-        <p>BOTH Series • 26 full pages + 2 Certificates + Bonus Activities<br>
+        <p>BOTH Series • 26 full pages + 2 Achievement Certificates + Bonus Activities<br>
         Includes ALL fun facts exactly as your Jungle & Baby Jungle book</p>
       </div>
       <div class="price-tag"><strike>₱198</strike> ₱129</div>
@@ -278,26 +278,26 @@
     <div class="payment-row"><span>Maribank</span><span>Direct Bank Transfer</span></div>
     <div class="instructions">
       📩 <strong>How to Order:</strong><br>
-      1. Fill in all details above<br>
+      1. Fill in all details above to get your unique reference number<br>
       2. Message us to request payment QR code or bank details<br>
       3. Send payment screenshot + your reference number<br>
-      4. We send your PDF to your email immediately
+      4. We send your PDF file to your email immediately after checking
     </div>
   </div>
 
   <button class="btn" id="submitBtn">Submit & Get Reference Number</button>
 
-  <p class="footer-note">© 2026 Hue Cloud Petal Pages • For personal family use only</p>
+  <p class="footer-note">© 2026 Hue Cloud Petal Pages • All files are for personal family use only</p>
 </div>
 
 <script>
-// Auto generate reference number
+// Auto-generate reference number on page load
 const today = new Date();
 const dateStr = today.toISOString().slice(0,10).replace(/-/g,'');
 const refNo = `HC-${dateStr}-${Math.floor(Math.random()*99999).toString().padStart(5,'0')}`;
 document.getElementById('refNo').textContent = refNo;
 
-// Pack selection works
+// Working pack selection
 document.getElementById('single').addEventListener('change', function() {
   document.querySelectorAll('.option').forEach(opt => opt.classList.remove('active'));
   this.closest('.option').classList.add('active');
@@ -310,7 +310,7 @@ document.getElementById('bundle').addEventListener('change', function() {
   document.getElementById('totalPrice').textContent = '₱129';
 });
 
-// Submit button works
+// Working submit button
 document.getElementById('submitBtn').addEventListener('click', function() {
   const name = document.getElementById('fullname').value.trim();
   const email = document.getElementById('email').value.trim();
