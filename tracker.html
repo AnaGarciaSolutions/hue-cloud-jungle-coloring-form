@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hue Cloud Petal Pages | Private Order Tracker</title>
+<title>Hue Cloud Petal Pages | Jungle Coloring Pack Order Form</title>
 <style>
   :root {
     --teal: #2DD4BF;
@@ -14,6 +14,7 @@
     --gold-dark: #D97706;
     --light: #F8FAFC;
     --dark: #334155;
+    --gray: #94A3B8;
   }
   * {
     margin: 0;
@@ -22,303 +23,385 @@
     font-family: 'Segoe UI', Roboto, sans-serif;
   }
   body {
-    background: #F8FAFC;
+    background: linear-gradient(135deg, #ECFEF9 0%, #FFF1F2 100%);
+    min-height: 100vh;
     padding: 2rem 1rem;
   }
   .container {
-    max-width: 1200px;
+    max-width: 620px;
     margin: 0 auto;
   }
 
-  /* Header with Logo */
-  .header {
-    background: linear-gradient(135deg, var(--teal-dark) 0%, var(--coral-dark) 100%);
-    color: white;
-    padding: 1.8rem;
-    border-radius: 16px;
-    margin-bottom: 2rem;
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-  }
-  .tracker-logo {
-    max-width: 100px;
-    border-radius: 12px;
-    background: white;
-    padding: 0.3rem;
-  }
-  .header h1 {
-    font-size: 1.5rem;
-    margin-bottom: 0.2rem;
-  }
-  .header p {
-    opacity: 0.9;
-    font-size: 0.9rem;
-  }
-
-  /* Stats Cards */
-  .stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-    gap: 1rem;
-    margin-bottom: 2rem;
-  }
-  .stat-card {
-    background: white;
-    padding: 1.3rem;
-    border-radius: 12px;
+  .banner {
+    background: linear-gradient(135deg, var(--teal) 0%, var(--coral) 100%);
+    border-radius: 20px;
+    padding: 2rem 1.5rem;
     text-align: center;
-    border-left: 4px solid var(--gold);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 32px rgba(45, 212, 191, 0.25);
   }
-  .stat-card h3 {
-    font-size: 2rem;
-    color: var(--teal-dark);
+  .brand-logo {
+    max-width: 180px;
+    margin: 0 auto 1rem;
+    display: block;
+    border-radius: 12px;
+    background: white;
+    padding: 0.5rem;
+  }
+  .banner h1 {
+    color: white;
+    font-size: 1.6rem;
     margin-bottom: 0.4rem;
   }
-  .stat-card p {
-    font-size: 0.9rem;
-    color: #64748B;
+  .banner p {
+    color: rgba(255,255,255,0.95);
+    font-size: 0.95rem;
   }
 
-  /* Toolbar */
-  .toolbar {
+  .card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.8rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  }
+  .card h2 {
+    color: var(--teal-dark);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1rem;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .required {
+    color: var(--coral-dark);
+  }
+
+  .form-group {
     margin-bottom: 1.2rem;
   }
-  .add-btn {
-    padding: 0.75rem 1.4rem;
-    background: var(--coral);
+  .form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--dark);
+    font-size: 0.95rem;
+  }
+  .form-group input {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 2px solid #E2E8F0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+  }
+  .form-group input:focus {
+    outline: none;
+    border-color: var(--teal);
+  }
+
+  .option {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.1rem;
+    margin: 0.8rem 0;
+    border: 2px solid #E2E8F0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .option.active {
+    border-color: var(--teal);
+    background: #F0FDFA;
+  }
+  .option input {
+    margin-top: 0.3rem;
+    accent-color: var(--teal);
+    width: 1.2rem;
+    height: 1.2rem;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .option-text {
+    flex: 1;
+  }
+  .option-text strong {
+    font-size: 1.05rem;
+    color: var(--dark);
+  }
+  .option-text p {
+    font-size: 0.85rem;
+    color: var(--gray);
+    margin-top: 0.3rem;
+    line-height: 1.5;
+  }
+  .price-tag {
+    font-weight: 700;
+    color: var(--coral-dark);
+    font-size: 1.1rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .price-tag strike {
+    font-size: 0.85rem;
+    color: var(--gray);
+    margin-right: 0.4rem;
+  }
+
+  .summary {
+    background: linear-gradient(135deg, #F0FDFA 0%, #FFFBEB 100%);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    margin: 1.5rem 0;
+  }
+  .summary .total {
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: var(--teal-dark);
+    margin: 0.5rem 0;
+  }
+  .ref-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-top: 0.8rem;
+    background: white;
+    padding: 0.7rem;
+    border-radius: 8px;
+    border: 1px solid #E2E8F0;
+  }
+  .ref-label {
+    font-size: 0.9rem;
+    color: var(--dark);
+    font-weight: 600;
+  }
+  .ref-value {
+    font-weight: 700;
+    color: var(--gold-dark);
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+  }
+  .copy-btn {
+    padding: 0.4rem 0.7rem;
+    background: var(--teal);
     color: white;
     border: none;
-    border-radius: 10px;
-    font-weight: 600;
+    border-radius: 6px;
+    font-size: 0.8rem;
     cursor: pointer;
     transition: background 0.2s;
   }
-  .add-btn:hover {
+  .copy-btn:hover {
+    background: var(--teal-dark);
+  }
+  .copy-btn.copied {
+    background: #10B981;
+  }
+
+  .payment-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.85rem 1rem;
+    background: #F8FAFC;
+    border-radius: 8px;
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+  }
+  .instructions {
+    background: #FFFBEB;
+    border-left: 4px solid var(--gold);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1.2rem 0 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--coral);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  .btn:hover {
     background: var(--coral-dark);
   }
+  .btn:active {
+    transform: scale(0.98);
+  }
 
-  /* Order Table */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  }
-  th {
-    background: var(--teal);
-    color: white;
-    padding: 1rem;
-    text-align: left;
-    font-size: 0.8rem;
-  }
-  td {
-    padding: 0.9rem;
-    border-bottom: 1px solid #F1F5F9;
-    font-size: 0.78rem;
-    vertical-align: middle;
-  }
-  tr:hover {
-    background: #FAFAFA;
-  }
-  .ref-no {
-    font-weight: 700;
-    color: var(--gold-dark);
-  }
-  .email-col {
-    max-width: 180px;
-    word-break: break-all;
-  }
-  .pack-type.bundle {
-    color: var(--coral-dark);
-    font-weight: 600;
-  }
-  .amount {
-    font-weight: 700;
-    color: var(--teal-dark);
-  }
-  .payment-tag {
-    font-size: 0.7rem;
-    padding: 0.3rem 0.6rem;
-    border-radius: 6px;
-    font-weight: 500;
-  }
-  .payment-tag.maya {
-    background: #F0FDFA;
-    color: var(--teal-dark);
-  }
-  .payment-tag.maribank {
-    background: #FFFBEB;
-    color: var(--gold-dark);
-  }
-  .status {
-    font-weight: 600;
-    font-size: 0.75rem;
-  }
-  .status.pending {
-    color: var(--gold-dark);
-  }
-  .status.paid {
-    color: #10B981;
-  }
-  .status.sent {
-    color: var(--teal-dark);
-  }
-  .action-btn {
-    padding: 0.4rem 0.7rem;
-    border: none;
-    border-radius: 6px;
-    font-size: 0.7rem;
-    cursor: pointer;
-    margin-right: 0.3rem;
-  }
-  .action-btn.mark-sent {
-    background: #ECFDF5;
-    color: #047857;
-  }
-  .empty-row {
+  .footer-note {
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--gray);
     text-align: center;
-    color: #94A3B8;
-    padding: 3rem !important;
-  }
-
-  @media (max-width: 900px) {
-    table { display: block; overflow-x: auto; }
+    line-height: 1.5;
   }
 </style>
 </head>
 <body>
 
 <div class="container">
-  <div class="header">
-    <!-- ✅ Uses your logo file same as public form -->
-    <img src="logo.png" alt="Hue Cloud Petal Pages Logo" class="tracker-logo" onerror="this.alt='Hue Cloud Petal Pages'">
-    <div>
-      <h1>🔒 Hue Cloud Petal Pages | Private Order Tracker</h1>
-      <p>Syncs with Public Order Form • Jungle & Baby Jungle Coloring Series</p>
+  <div class="banner">
+    <img src="logo.png" alt="Hue Cloud Petal Pages Logo" class="brand-logo" onerror="this.alt='Hue Cloud Petal Pages'">
+    <h1>🌿 Jungle & Baby Jungle Coloring Pack</h1>
+    <p>Printable PDF • Sent directly to your email • Ages 3–15</p>
+  </div>
+
+  <div class="card">
+    <h2>👤 Your Details <span class="required">*</span></h2>
+    <div class="form-group">
+      <label for="fullname">Full Name *</label>
+      <input type="text" id="fullname" placeholder="Enter your full name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email Address (We send your PDF here) *</label>
+      <input type="email" id="email" placeholder="your@email.com" required>
+    </div>
+    <div class="form-group">
+      <label for="contact">Contact Number *</label>
+      <input type="tel" id="contact" placeholder="09XX XXX XXXX" required>
     </div>
   </div>
 
-  <!-- Auto Calculated Stats -->
-  <div class="stats">
-    <div class="stat-card"><h3 id="totalOrders">0</h3><p>Total Orders</p></div>
-    <div class="stat-card"><h3 id="totalRevenue">₱0</h3><p>Total Revenue</p></div>
-    <div class="stat-card"><h3 id="pendingPay">0</h3><p>Pending Payment</p></div>
-    <div class="stat-card"><h3 id="pendingSend">0</h3><p>To Send PDF</p></div>
+  <div class="card">
+    <h2>📘 Choose Your Pack</h2>
+    <label class="option" for="single">
+      <input type="radio" name="pack" id="single" value="single">
+      <div class="option-text">
+        <strong>Single Series</strong>
+        <p>Jungle Animals OR Jungle Babies (13 pages)<br>
+        • Lion: Roar heard from 5 miles away<br>
+        • Elephant: Only animal that can't jump<br>
+        • Monkey: Uses tail like an extra hand<br>
+        • Zebra: Unique stripes like fingerprints<br>
+        • Rabbit: Ears turn 180 degrees<br>
+        • Giraffe: Tongue up to 20 inches long<br>
+        • Deer: Fawn spots look like sunlight<br>
+        • Panda: Babies born pink, size of butter<br>
+        • Fox: Babies called kits, love to play</p>
+      </div>
+      <div class="price-tag">₱79</div>
+    </label>
+    <label class="option active" for="bundle">
+      <input type="radio" name="pack" id="bundle" value="bundle" checked>
+      <div class="option-text">
+        <strong>🔥 Double Pack (Best Value)</strong>
+        <p>BOTH Series • 26 full pages + 2 Certificates + Bonus Activities<br>
+        Includes ALL fun facts exactly as your Jungle & Baby Jungle book</p>
+      </div>
+      <div class="price-tag"><strike>₱198</strike> ₱129</div>
+    </label>
   </div>
 
-  <div class="toolbar">
-    <button class="add-btn" onclick="addNewOrder()">+ Add New Order</button>
+  <div class="summary">
+    <p>Your Total:</p>
+    <div class="total" id="totalPrice">₱129</div>
+    <div class="ref-box">
+      <span class="ref-label">Reference Number:</span>
+      <span class="ref-value" id="refNo">Loading...</span>
+      <button class="copy-btn" id="copyRefBtn" onclick="copyRefNumber()">Copy</button>
+    </div>
+    <p style="font-size:0.9rem; margin-top:0.8rem;">No shipping fee • PDF sent within 1 hour after payment confirmation</p>
   </div>
 
-  <!-- Order Table -->
-  <table>
-    <thead>
-      <tr>
-        <th>Ref No.</th>
-        <th>Date</th>
-        <th>Customer Name</th>
-        <th>Contact Number</th>
-        <th>Email (Send PDF Here)</th>
-        <th>Pack Type</th>
-        <th>Amount</th>
-        <th>Payment Method</th>
-        <th>Status</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody id="orderTableBody">
-      <tr><td colspan="10" class="empty-row">Orders will appear here. All fields match your public order form exactly.</td></tr>
-    </tbody>
-  </table>
+  <div class="card">
+    <h3>💳 Accepted Payment Methods</h3>
+    <div class="payment-row"><span>Maya</span><span>Fastest Confirmation</span></div>
+    <div class="payment-row"><span>Maribank</span><span>Direct Bank Transfer</span></div>
+    <div class="instructions">
+      📩 <strong>How to Order:</strong><br>
+      1. Fill in all details above<br>
+      2. Click "Submit Order" to save your record<br>
+      3. Message us with your <strong>Reference Number</strong> to get payment details<br>
+      4. Send payment screenshot + reference number<br>
+      5. We send your PDF to your email immediately
+    </div>
+  </div>
+
+  <button class="btn" id="submitBtn">Submit Order</button>
+
+  <p class="footer-note">© 2026 Hue Cloud Petal Pages • For personal family use only</p>
 </div>
 
 <script>
-let orders = [];
+// Auto-generate reference number
+const today = new Date();
+const dateStr = today.toISOString().slice(0,10).replace(/-/g,'');
+const refNo = `HC-${dateStr}-${Math.floor(Math.random()*99999).toString().padStart(5,'0')}`;
+document.getElementById('refNo').textContent = refNo;
 
-// Update dashboard stats automatically
-function updateStats() {
-  document.getElementById('totalOrders').textContent = orders.length;
-  const total = orders.reduce((sum, o) => sum + parseInt(o.amount.replace('₱','')), 0);
-  document.getElementById('totalRevenue').textContent = `₱${total.toLocaleString()}`;
-  document.getElementById('pendingPay').textContent = orders.filter(o => o.status === 'Pending Payment').length;
-  document.getElementById('pendingSend').textContent = orders.filter(o => o.status === 'Paid, Ready to Send').length;
+// Copy reference number function
+function copyRefNumber() {
+  const refText = document.getElementById('refNo').textContent;
+  navigator.clipboard.writeText(refText).then(() => {
+    const btn = document.getElementById('copyRefBtn');
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = 'Copy';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
 }
 
-// Render orders in table
-function renderOrders() {
-  const tbody = document.getElementById('orderTableBody');
-  tbody.innerHTML = '';
-  if (orders.length === 0) {
-    tbody.innerHTML = `<tr><td colspan="10" class="empty-row">Orders will appear here. All fields match your public order form exactly.</td></tr>`;
-    updateStats();
+// Pack selection
+document.getElementById('single').addEventListener('change', function() {
+  document.querySelectorAll('.option').forEach(opt => opt.classList.remove('active'));
+  this.closest('.option').classList.add('active');
+  document.getElementById('totalPrice').textContent = '₱79';
+});
+
+document.getElementById('bundle').addEventListener('change', function() {
+  document.querySelectorAll('.option').forEach(opt => opt.classList.remove('active'));
+  this.closest('.option').classList.add('active');
+  document.getElementById('totalPrice').textContent = '₱129';
+});
+
+// Save order data to shared storage
+document.getElementById('submitBtn').addEventListener('click', function() {
+  const name = document.getElementById('fullname').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const contact = document.getElementById('contact').value.trim();
+  const pack = document.querySelector('input[name="pack"]:checked').value;
+  const amount = pack === 'single' ? '₱79' : '₱129';
+  
+  if (!name || !email || !contact) {
+    alert('⚠️ Please fill in all required fields first!');
     return;
   }
-  orders.forEach((order, index) => {
-    const row = document.createElement('tr');
-    row.innerHTML = `
-      <td class="ref-no">${order.ref}</td>
-      <td>${order.date}</td>
-      <td>${order.name}</td>
-      <td class="contact-col">${order.contact}</td>
-      <td class="email-col">${order.email}</td>
-      <td class="pack-type ${order.pack === 'Double Pack' ? 'bundle' : ''}">${order.pack}</td>
-      <td class="amount">${order.amount}</td>
-      <td><span class="payment-tag ${order.payment.toLowerCase()}">${order.payment}</span></td>
-      <td><span class="status ${order.status.includes('Pending') ? 'pending' : order.status.includes('Sent') ? 'sent' : 'paid'}">${order.status}</span></td>
-      <td><button class="action-btn mark-sent" onclick="markAsSent(${index})">Mark Sent</button></td>
-    `;
-    tbody.appendChild(row);
-  });
-  updateStats();
-}
 
-// Mark order as completed
-function markAsSent(index) {
-  orders[index].status = 'PDF Sent';
-  renderOrders();
-  alert(`✅ Order ${orders[index].ref} marked as completed — PDF sent to ${orders[index].email}`);
-}
-
-// Add new order manually
-function addNewOrder() {
-  const today = new Date();
-  const dateStr = today.toISOString().slice(0,10).replace(/-/g,'');
-  const ref = `HC-${dateStr}-${Math.floor(Math.random()*99999).toString().padStart(5,'0')}`;
-  const name = prompt('Customer Full Name:');
-  const email = prompt('Email Address (Send PDF here):');
-  const contact = prompt('Contact Number:');
-  const isBundle = confirm('Is this the Double Pack?');
-  const pack = isBundle ? 'Double Pack' : 'Single Series';
-  const amount = isBundle ? '₱129' : '₱79';
-  const payment = confirm('Paid via Maya?') ? 'Maya' : 'Maribank';
+  // Get existing orders or start fresh
+  let orders = JSON.parse(localStorage.getItem('hueCloudOrders') || '[]');
   
-  if (!name || !email || !contact) return alert('⚠️ Please fill all required details.');
-  
+  // Add new order
   orders.unshift({
-    ref: ref,
-    date: today.toLocaleDateString('en-PH'),
+    ref: refNo,
+    date: new Date().toLocaleDateString('en-PH'),
     name: name,
-    contact: contact,
     email: email,
-    pack: pack,
+    contact: contact,
+    pack: pack === 'single' ? 'Single Series' : 'Double Pack',
     amount: amount,
-    payment: payment,
+    payment: 'Not Yet Paid',
     status: 'Pending Payment'
   });
-  renderOrders();
-}
 
-// Initialize on load
-renderOrders();
+  // Save to shared storage
+  localStorage.setItem('hueCloudOrders', JSON.stringify(orders));
+
+  alert(`✅ Order Saved Successfully!\n\n📌 Your Reference Number: ${refNo}\n\nClick the "Copy" button next to your reference number to copy it easily.\n\nMessage us now with this reference to get your payment details.`);
+});
 </script>
 </body>
 </html>
