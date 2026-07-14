@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hue Cloud Petal Pages | Jungle & Baby Jungle Coloring Pack Order Form</title>
+<title>Hue Cloud Petal Pages | Jungle Coloring Pack Order Form</title>
 <style>
   :root {
     --teal: #2DD4BF;
@@ -14,6 +14,7 @@
     --gold-dark: #D97706;
     --light: #F8FAFC;
     --dark: #334155;
+    --gray: #94A3B8;
   }
   * {
     margin: 0;
@@ -40,7 +41,7 @@
     box-shadow: 0 8px 32px rgba(45, 212, 191, 0.25);
   }
   .brand-logo {
-    max-width: 210px;
+    max-width: 180px;
     margin: 0 auto 1rem;
     display: block;
     border-radius: 12px;
@@ -49,12 +50,12 @@
   }
   .banner h1 {
     color: white;
-    font-size: 1.75rem;
+    font-size: 1.6rem;
     margin-bottom: 0.4rem;
   }
   .banner p {
     color: rgba(255,255,255,0.95);
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .card {
@@ -63,12 +64,17 @@
     padding: 1.8rem;
     margin-bottom: 1.5rem;
     box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    border-left: 5px solid var(--gold);
   }
   .card h2 {
     color: var(--teal-dark);
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .required {
+    color: var(--coral-dark);
   }
 
   .form-group {
@@ -87,10 +93,11 @@
     border: 2px solid #E2E8F0;
     border-radius: 10px;
     font-size: 1rem;
+    transition: border-color 0.2s ease;
   }
   .form-group input:focus {
     outline: none;
-    border-color: var(--coral);
+    border-color: var(--teal);
   }
 
   .option {
@@ -105,12 +112,12 @@
     transition: all 0.2s ease;
   }
   .option.active {
-    border-color: var(--coral);
-    background: #FFF5F5;
+    border-color: var(--teal);
+    background: #F0FDFA;
   }
   .option input {
     margin-top: 0.3rem;
-    accent-color: var(--coral);
+    accent-color: var(--teal);
     width: 1.2rem;
     height: 1.2rem;
     cursor: pointer;
@@ -125,7 +132,7 @@
   }
   .option-text p {
     font-size: 0.85rem;
-    color: #64748B;
+    color: var(--gray);
     margin-top: 0.3rem;
     line-height: 1.5;
   }
@@ -138,7 +145,7 @@
   }
   .price-tag strike {
     font-size: 0.85rem;
-    color: #94A3B8;
+    color: var(--gray);
     margin-right: 0.4rem;
   }
 
@@ -155,11 +162,43 @@
     color: var(--teal-dark);
     margin: 0.5rem 0;
   }
-  .ref {
-    font-size: 0.95rem;
-    color: var(--gold-dark);
+  .ref-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-top: 0.8rem;
+    background: white;
+    padding: 0.7rem;
+    border-radius: 8px;
+    border: 1px solid #E2E8F0;
+  }
+  .ref-label {
+    font-size: 0.9rem;
+    color: var(--dark);
     font-weight: 600;
-    margin-top: 0.5rem;
+  }
+  .ref-value {
+    font-weight: 700;
+    color: var(--gold-dark);
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+  }
+  .copy-btn {
+    padding: 0.4rem 0.7rem;
+    background: var(--teal);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .copy-btn:hover {
+    background: var(--teal-dark);
+  }
+  .copy-btn.copied {
+    background: #10B981;
   }
 
   .payment-row {
@@ -204,7 +243,7 @@
   .footer-note {
     margin-top: 1.5rem;
     font-size: 0.85rem;
-    color: #64748B;
+    color: var(--gray);
     text-align: center;
     line-height: 1.5;
   }
@@ -220,7 +259,7 @@
   </div>
 
   <div class="card">
-    <h2>👤 Your Details</h2>
+    <h2>👤 Your Details <span class="required">*</span></h2>
     <div class="form-group">
       <label for="fullname">Full Name *</label>
       <input type="text" id="fullname" placeholder="Enter your full name" required>
@@ -242,15 +281,15 @@
       <div class="option-text">
         <strong>Single Series</strong>
         <p>Jungle Animals OR Jungle Babies (13 pages)<br>
-        • Lion: A lion's roar can be heard from 5 miles away!<br>
-        • Elephant: Elephants are the only animals that can't jump!<br>
-        • Monkey: Monkeys use their tails like an extra hand to swing and grab things!<br>
-        • Zebra: Every zebra has a unique pattern of stripes, just like your fingerprints!<br>
-        • Rabbit: Rabbits can turn their ears 180 degrees to listen in any direction!<br>
-        • Giraffe: Giraffes are the tallest animals on Earth and their tongues can be up to 20 inches long!<br>
-        • Deer: Baby deer are called fawns, and their white spots help them hide in the forest by looking like sunlight on leaves!<br>
-        • Panda: A baby panda is born pink and tiny, about the size of a stick of butter!<br>
-        • Fox: A baby fox is called a kit, and it loves to play and pounce just like a puppy!</p>
+        • Lion: Roar heard from 5 miles away<br>
+        • Elephant: Only animal that can't jump<br>
+        • Monkey: Uses tail like an extra hand<br>
+        • Zebra: Unique stripes like fingerprints<br>
+        • Rabbit: Ears turn 180 degrees<br>
+        • Giraffe: Tongue up to 20 inches long<br>
+        • Deer: Fawn spots look like sunlight<br>
+        • Panda: Babies born pink, size of butter<br>
+        • Fox: Babies called kits, love to play</p>
       </div>
       <div class="price-tag">₱79</div>
     </label>
@@ -258,7 +297,7 @@
       <input type="radio" name="pack" id="bundle" value="bundle" checked>
       <div class="option-text">
         <strong>🔥 Double Pack (Best Value)</strong>
-        <p>BOTH Series • 26 full pages + 2 Achievement Certificates + Bonus Activities<br>
+        <p>BOTH Series • 26 full pages + 2 Certificates + Bonus Activities<br>
         Includes ALL fun facts exactly as your Jungle & Baby Jungle book</p>
       </div>
       <div class="price-tag"><strike>₱198</strike> ₱129</div>
@@ -268,8 +307,12 @@
   <div class="summary">
     <p>Your Total:</p>
     <div class="total" id="totalPrice">₱129</div>
-    <div class="ref">Order Reference: <span id="refNo">Loading...</span></div>
-    <p style="font-size:0.9rem; margin-top:0.5rem;">No shipping fee • PDF sent within 1 hour after payment confirmation</p>
+    <div class="ref-box">
+      <span class="ref-label">Reference Number:</span>
+      <span class="ref-value" id="refNo">Loading...</span>
+      <button class="copy-btn" id="copyRefBtn" onclick="copyRefNumber()">Copy</button>
+    </div>
+    <p style="font-size:0.9rem; margin-top:0.8rem;">No shipping fee • PDF sent within 1 hour after payment confirmation</p>
   </div>
 
   <div class="card">
@@ -278,26 +321,41 @@
     <div class="payment-row"><span>Maribank</span><span>Direct Bank Transfer</span></div>
     <div class="instructions">
       📩 <strong>How to Order:</strong><br>
-      1. Fill in all details above to get your unique reference number<br>
-      2. Message us to request payment QR code or bank details<br>
-      3. Send payment screenshot + your reference number<br>
-      4. We send your PDF file to your email immediately after checking
+      1. Fill in all details above<br>
+      2. Click "Submit Order" to save your record<br>
+      3. Message us with your <strong>Reference Number</strong> to get payment details<br>
+      4. Send payment screenshot + reference number<br>
+      5. We send your PDF to your email immediately
     </div>
   </div>
 
-  <button class="btn" id="submitBtn">Submit & Get Reference Number</button>
+  <button class="btn" id="submitBtn">Submit Order</button>
 
-  <p class="footer-note">© 2026 Hue Cloud Petal Pages • All files are for personal family use only</p>
+  <p class="footer-note">© 2026 Hue Cloud Petal Pages • For personal family use only</p>
 </div>
 
 <script>
-// Auto-generate reference number on page load
+// Auto-generate reference number
 const today = new Date();
 const dateStr = today.toISOString().slice(0,10).replace(/-/g,'');
 const refNo = `HC-${dateStr}-${Math.floor(Math.random()*99999).toString().padStart(5,'0')}`;
 document.getElementById('refNo').textContent = refNo;
 
-// Working pack selection
+// Copy reference number function
+function copyRefNumber() {
+  const refText = document.getElementById('refNo').textContent;
+  navigator.clipboard.writeText(refText).then(() => {
+    const btn = document.getElementById('copyRefBtn');
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = 'Copy';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+
+// Pack selection
 document.getElementById('single').addEventListener('change', function() {
   document.querySelectorAll('.option').forEach(opt => opt.classList.remove('active'));
   this.closest('.option').classList.add('active');
@@ -310,18 +368,39 @@ document.getElementById('bundle').addEventListener('change', function() {
   document.getElementById('totalPrice').textContent = '₱129';
 });
 
-// Working submit button
+// Save order data to shared storage
 document.getElementById('submitBtn').addEventListener('click', function() {
   const name = document.getElementById('fullname').value.trim();
   const email = document.getElementById('email').value.trim();
   const contact = document.getElementById('contact').value.trim();
+  const pack = document.querySelector('input[name="pack"]:checked').value;
+  const amount = pack === 'single' ? '₱79' : '₱129';
   
   if (!name || !email || !contact) {
     alert('⚠️ Please fill in all required fields first!');
     return;
   }
 
-  alert(`✅ Order Recorded Successfully!\n\n📌 Reference Number: ${refNo}\n👤 Name: ${name}\n📧 Email: ${email}\n📞 Contact: ${contact}\n\nMessage us now with this reference to get your payment details.`);
+  // Get existing orders or start fresh
+  let orders = JSON.parse(localStorage.getItem('hueCloudOrders') || '[]');
+  
+  // Add new order
+  orders.unshift({
+    ref: refNo,
+    date: new Date().toLocaleDateString('en-PH'),
+    name: name,
+    email: email,
+    contact: contact,
+    pack: pack === 'single' ? 'Single Series' : 'Double Pack',
+    amount: amount,
+    payment: 'Not Yet Paid',
+    status: 'Pending Payment'
+  });
+
+  // Save to shared storage
+  localStorage.setItem('hueCloudOrders', JSON.stringify(orders));
+
+  alert(`✅ Order Saved Successfully!\n\n📌 Your Reference Number: ${refNo}\n\nClick the "Copy" button next to your reference number to copy it easily.\n\nMessage us now with this reference to get your payment details.`);
 });
 </script>
 </body>
